@@ -2,6 +2,8 @@
 // you may only move down or right
 // in how may ways can you trave to the goal on a grid with dimensions m*n
 
+//Brute Force time complexity 2^n*m
+
 const gridTaveller = (m, n) => {
   if (m === 1 && n === 1) return 1;
   if (m === 0 || n === 0) return 0;
@@ -16,10 +18,11 @@ console.log(gridTaveller(1, 1)); //1
 console.log(gridTaveller(2, 3)); //3
 console.log(gridTaveller(3, 2)); //3
 console.log(gridTaveller(3, 3)); //6
-//console.log(gridTaveller(18, 18)); //????
+//console.log(gridTaveller(18, 18)); //????  2333606220
 
 //memoize the gridTraveller
 
+// Memoized  , Time complexity O(m*n)
 const memoGridTaveller = (m, n, memo = {}) => {
   // are the arguments in memo
   const key = m + ',' + n;
